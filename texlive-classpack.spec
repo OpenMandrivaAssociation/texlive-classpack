@@ -6,7 +6,7 @@
 # catalog-version 0.77
 Name:		texlive-classpack
 Version:	0.77
-Release:	5
+Release:	6
 Summary:	XML mastering for LaTeX classes and packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/classpack
