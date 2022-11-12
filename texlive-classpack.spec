@@ -1,19 +1,13 @@
-# revision 33101
-# category Package
-# catalog-ctan /support/classpack
-# catalog-date 2014-02-26 23:03:13 +0100
-# catalog-license lppl1.3
-# catalog-version 0.77
 Name:		texlive-classpack
-Version:	0.77
-Release:	6
+Version:	55218
+Release:	1
 Summary:	XML mastering for LaTeX classes and packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/classpack
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/classpack.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/classpack.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/classpack.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/classpack.r55218.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/classpack.doc.r55218.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/classpack.source.r55218.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,36 +20,24 @@ XSLT 2 styleheets generate the .dtx and .ins distribution files
 expected by end users.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/classpack/classpack.sty
-%doc %{_texmfdistdir}/doc/support/classpack/MANIFEST
-%doc %{_texmfdistdir}/doc/support/classpack/README
-%doc %{_texmfdistdir}/doc/support/classpack/classpack.pdf
-%doc %{_texmfdistdir}/doc/support/classpack/db2bibtex.xsl
-%doc %{_texmfdistdir}/doc/support/classpack/db2dtx.xsl
-%doc %{_texmfdistdir}/doc/support/classpack/db2plaintext.xsl
-%doc %{_texmfdistdir}/doc/support/classpack/decommentbbl.awk
-%doc %{_texmfdistdir}/doc/support/classpack/doctexbook.dtd
-%doc %{_texmfdistdir}/doc/support/classpack/getgis.sh
-%doc %{_texmfdistdir}/doc/support/classpack/lppl.xml
-%doc %{_texmfdistdir}/doc/support/classpack/prepost.xml
-%doc %{_texmfdistdir}/doc/support/classpack/readme.xml
-%doc %{_texmfdistdir}/doc/support/classpack/test.sh
+%{_texmfdistdir}/tex/latex/classpack
+%doc %{_texmfdistdir}/doc/support/classpack
 #- source
-%doc %{_texmfdistdir}/source/support/classpack/classpack.dtx
-%doc %{_texmfdistdir}/source/support/classpack/classpack.ins
+%doc %{_texmfdistdir}/source/support/classpack
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
