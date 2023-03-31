@@ -1,6 +1,6 @@
 Name:		texlive-classpack
 Version:	55218
-Release:	1
+Release:	2
 Summary:	XML mastering for LaTeX classes and packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/classpack
